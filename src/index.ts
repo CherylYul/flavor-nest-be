@@ -1,10 +1,14 @@
 import 'module-alias/register';
 
+import flavorCors from '@configs/cors';
 import client from '@configs/database';
-import { PORT } from '@configs/env';
+import { BE_PORT } from '@configs/env';
+import limit from '@configs/rate-limit';
 
 const express = require('express');
 const app = express();
+app.use(flavorCors);
+app.use(limit);
 app.use(express.json());
 
 app.get('/', async (req, res) => {
@@ -24,6 +28,6 @@ app.post('/', (req, res) => {
   });
 });
 
-app.listen(PORT, () => {
-  console.log(`Example app listening on port ${PORT}`);
+app.listen(BE_PORT, () => {
+  console.log(`Example app listening on port ${BE_PORT}`);
 });
