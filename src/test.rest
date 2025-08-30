@@ -1,0 +1,11 @@
+###
+GET http://localhost:1111
+
+###
+POST http://localhost:1111
+Content-Type: application/json
+
+{
+  "name": "flavornest",
+  "location": "VN"
+}
