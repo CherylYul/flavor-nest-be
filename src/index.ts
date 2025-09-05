@@ -4,8 +4,8 @@ import flavorCors from '@configs/cors';
 import client from '@configs/database';
 import { BE_PORT } from '@configs/env';
 import limit from '@configs/rate-limit';
+import express from 'express';
 
-const express = require('express');
 const app = express();
 app.use(flavorCors);
 app.use(limit);
